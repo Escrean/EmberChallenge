@@ -1,0 +1,60 @@
+.main{
+	padding: 40px 15px;
+    
+	text-align: center;
+     }
+.red{
+	background-color: red;
+	
+}
+.green{
+	background-color: green;
+	
+}
+.blue{
+	background-color: blue;
+}
+.yellow{
+	background-color: yellow;
+}
+.gray{
+	background-color: #C0C0C0;
+}
+
+.destroy{
+	padding-left: 5px;	
+	background-image: url("/delete.png");
+	width:16px;
+	height:16px;
+}
+
+.diamond{
+	padding: 0px 8px !important; 
+	background-image: url("/diamond.png");
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 14px;
+}
+
+.timeline{
+    height: 1px;
+    widows: 1px;
+}
+
+.white{
+	background-color: #fff;
+	
+}
+
+.box{
+	font-size:10px;
+	border:1px solid #888;
+}
+
+.name{
+	position: absolute;
+    top: -25px;
+    left: -8px;
+    border: 1px solid;
+}

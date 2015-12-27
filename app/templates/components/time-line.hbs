@@ -1,0 +1,8 @@
+
+<div style="position:absolute; white-space: nowrap;">
+{{#each timelinearray as |task|}}
+   <span  class={{if task.isMilestone 'diamond' task.color}} style={{task.width}}>
+     <span class="name">{{if task.isMilestone task.name}}</span> 
+   </span> 
+{{/each}}
+</div>

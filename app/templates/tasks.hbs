@@ -1,0 +1,95 @@
+<div class="container">
+
+      <div class="main">
+		<div class="timelinecontainer">
+			{{time-line tasks=model}}
+    	</div>
+		
+		
+			
+			<div style="border: 1px solid #888;   border-radius:3px; margin-top: 50px;">
+			
+				<form class="form-inline" role="form" {{action "createTask" on='submit'}}>
+				  <div class="form-group">
+				  	{{input  type="text"  id="new-task"  placeholder="Task name"  value=newTaskname   class="form-control "}}
+					
+				  </div>
+				  <div class="form-group">
+				  
+					{{pikaday-input value=newTaskStart format="MM/DD/YYYY"}}
+				  </div>
+				  <div class="form-group">
+				  	
+					{{pikaday-input value=newTaskEnd format="MM/DD/YYYY"}}
+				  </div>
+				  <div class="form-group">
+				  	<fieldset disabled>
+				  	{{input  type="text"  id="new-task-duration"  placeholder="duration"  value=newTaskDuration  class="form-control"}}
+				  	</fieldset>
+				  </div>
+				  <div class="form-group">
+					{{#x-select value=newTaskBanding class="form-control"}}
+					  {{#x-option value=""}}banding{{/x-option}}
+					  {{#x-option value="red"}}Red{{/x-option}}
+					  {{#x-option value="green"}}green{{/x-option}}
+					  {{#x-option value="yellow"}}yellow{{/x-option}}
+					  {{#x-option value="blue"}}blue{{/x-option}}
+					{{/x-select}}
+					
+					
+					
+				  </div>
+				  
+				  <input type="submit" value="save" class="btn btn-primary"/>
+				  <div class="form-group destroy" {{action "clearNewTask"}} >
+					&nbsp;&nbsp;			
+				  </div>
+				 </form>
+			
+			{{#each model as |task|}}
+				<form class="form-inline" role="form" {{action "saveTask" task on="submit"}}>
+				  <div class="form-group">
+				  	
+				  	{{input  type="text"   placeholder="Task name"  value=task.name   class="form-control "}}
+					
+				  </div>
+				  <div class="form-group">
+				  	
+					{{pikaday-input value=task.start format="MM/DD/YYYY"}}
+					
+				  </div>
+				  <div class="form-group">
+					{{pikaday-input value=task.end format="MM/DD/YYYY"}}
+				  </div>
+				  <div class="form-group">
+					<fieldset disabled>
+				  	{{input  type="text" placeholder="duration"  value=task.duration  class="form-control"}}
+				  	</fieldset>
+				  </div>
+				  <div class="form-group">
+					{{#x-select value=task.banding class="form-control"}}
+					  {{#x-option value=""}}banding{{/x-option}}
+					  {{#x-option value="red"}}Red{{/x-option}}
+					  {{#x-option value="green"}}green{{/x-option}}
+					  {{#x-option value="yellow"}}yellow{{/x-option}}
+					  {{#x-option value="blue"}}blue{{/x-option}}
+					{{/x-select}}
+				  </div>
+				  
+				  
+					
+				  
+				  <input type="submit" value="save" class="btn btn-primary"/>
+				  <div class="form-group destroy" {{action "removeTask" task}}></div>
+				 </form>
+			{{/each}}
+			</div>
+		
+		
+		
+      </div>
+
+
+
+    </div><!-- /.container -->
+

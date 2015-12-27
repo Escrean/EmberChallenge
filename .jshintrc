@@ -1,7 +1,10 @@
 {
   "predef": [
-    "document",
-    "window",
+    "document": true,
+    "window": true,
+    "WowENV": true,
+    "moment": true,
+    "moment-range": true,
     "-Promise"
   ],
   "browser": true,
