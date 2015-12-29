@@ -2,7 +2,7 @@
 <div style="position:absolute; white-space: nowrap;">
 {{#each timelinearray as |task|}}
    <span  class={{if task.isMilestone 'diamond' task.color}} style={{task.width}}>
-     <span class="name">{{if task.isMilestone task.name}}</span> 
+     <span class="name">{{if task.isMilestone task.name}} <br/> <span class="date">{{if task.isMilestone task.timeLineDate}}</span></span> 
    </span> 
 {{/each}}
 </div>

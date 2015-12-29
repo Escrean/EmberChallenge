@@ -13,7 +13,7 @@ export default Ember.Component.extend({
        var arrayOrderedByStart = this.get('tasks').sortBy('start'); 
        var firstDate = arrayOrderedByStart.get('firstObject'); /*first date*/
        var arrayOrderedByEnd  = this.get('tasks').sortBy('end');
-       var endDate =  arrayOrderedByStart.get('lastObject'); /*last Date*/
+       var endDate =  arrayOrderedByEnd.get('lastObject'); /*last Date*/
        
        
        
